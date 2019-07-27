@@ -20,6 +20,6 @@ echo "$DOCKER_PASSWORD" | docker login --username "$DOCKER_USERNAME" --password-
 # Phase 3 - build a container
 git clone https://github.com/kristophjunge/docker-mediawiki.git
 cd docker-mediawiki
-sed -i 's/libicu52/libicu55/g' Dockerfile
+sed -i 's/libicu52/libicu57/g' Dockerfile
 docker buildx build --platform linux/amd64,linux/arm64,linux/arm/v7 -t jrcichra/docker-mediawiki-visualeditor --push .
 docker buildx imagetools inspect jrcichra/docker-mediawiki-visualeditor
